@@ -22,12 +22,12 @@
     console.log(a) // a is not defined
 
   ```
+  
+  
   2. Let does not have variable promotion
     ```
-    
     console.log(a)  // a is not deined
     let a = 10
-    
     ```
 
 
