@@ -14,8 +14,9 @@
   * Async
 
 ### Let,const
-  1. Let declared variables are valid only within the code block in which they are located
-  ```
+  1. Let features
+    * Let declared variables are valid only within the code block in which they are located
+    ```
     if (true) {
       let a = 10
     }
