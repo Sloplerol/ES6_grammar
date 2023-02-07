@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        let str = `
+        <ul>
+            <li>
+                <a>DJWCB</a>
+            </li>
+            <li>
+                <a>hello</a>
+            </li>
+            <li>56</li>
+        </ul>`;
+        // 声明正则提取标签内容
+        // const reg = /<li>\s+<a>(.*?)<\/a>/;
+        //可以通过/s模式修正符可以让点匹配任意字符来解决换行问题
+        // const reg = /<li>.*?<a>(.*?)<\/a>/s;
+        // const result = reg.exec(str);
+        // console.log(result);
+        // 如果需要全局匹配再加一个g
+        const reg = /<li>.*?<a>(.*?)<\/a>/gs;
+        let result;
+        let data = [];
+        while(result = reg.exec(str)){
+            // console.log(result);
+            data.push({rname:result[1],time:result[2]});
+        }
+        console.log(data);
+        
+    </script>
+</body>
+
+</html>

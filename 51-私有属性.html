@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            name;
+            #age;
+            #weight;
+            constructor(name,age,weight){
+                this.name = name;
+                this.#age = age;
+                this.#weight = weight;
+            }
+            intro(){
+                console.log(this.name);
+                console.log(this.#age);
+                console.log(this.#weight);
+            }
+        }
+        let boy = new Person('zjj',18,'28.3kg');
+        console.log(boy);
+        // console.log(boy.#age);
+        // 私有属性在外部是无法直接访问到的 通过内部方法来获取里面的值
+        boy.intro();
+    </script>
+</body>
+</html>

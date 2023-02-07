@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function fn(a,b,c=10) {
+        //     return a+b+c;
+        // }
+        // console.log(fn(1,2)); //往往形参设置默认值 设置默认值往往在最后一位为了好传入实参是不用考虑顺序
+
+        //与解构赋值连用
+        function fn({rname='sad',age,male}) {
+            //默认值在你不传参的时候生效
+            console.log(rname,age);
+        }
+        fn({
+            rname: 'zjj',
+            age: 29,
+            male: 'female'
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            constructor(name,brand){
+                this.name = name;
+                this.brand = brand;
+            }
+            sayname(){
+                console.log('i hear you');
+            }
+        }
+        class Newphone extends Phone{
+            constructor(name,brand,color,size) {
+                super(name,brand);
+                this.color = color;
+                this.size = size;
+            }
+            usage(){
+                console.log('playgame');
+            }
+            and(){
+                console.log('shuaji');
+            }
+            sayname(){
+                //实现子类对父类方法的重写 无法通过super来调用父类的方法
+                console.log('rewrite');
+            }
+        }
+        const np = new Newphone('Apple','Huawei','red',29);
+        console.log(np);
+        np.sayname();
+    </script>
+</body>
+</html>

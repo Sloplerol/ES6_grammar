@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const set = new Set();
+        console.log(set);
+        console.log(typeof(set));
+        // 集合里面可以包含可迭代数据 并且会为数据去重
+        let s2 = new Set([1,2,3,4,1]);
+        console.log(s2);
+        // 通过size属性来获取元素的个数
+        console.log(s2.size);
+        // 添加元素
+        s2.add(6);
+        // console.log(s2);
+        // 删除元素
+        s2.delete(2);
+        // 检测元素
+        console.log(s2.has(3));
+        // 清空集合
+        // s2.clear();
+
+        // 集合是有iterator接口的
+        for(v of s2) {
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

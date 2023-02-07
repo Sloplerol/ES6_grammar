@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = 123n;
+        console.log(n,typeof(n)); //123n Bigint类型
+
+        let a = 123;
+        console.log(BigInt(a)); //BigInt将整形转化为大整形
+
+        //应用于大数据运算
+        let max = Number.MAX_SAFE_INTEGER;
+        console.log(max);
+        console.log(max+2); //答案会出问题
+        console.log(BigInt(max)+BigInt(2)); //正常计算
+    </script>
+</body>
+</html>

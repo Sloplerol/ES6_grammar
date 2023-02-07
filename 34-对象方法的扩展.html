@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Object.is判断两个数值是否相等
+        console.log(Object.is(100,100));
+        console.log(Object.is(NaN,NaN));  //true
+        console.log(NaN===NaN);  //false
+
+        //Object.assign合并对象
+        const obj1 = {
+            rname: 'zjj',
+            age: 21,
+            hobby: 'coding'
+        }
+        const obj2 = {
+            rname: 'ldh',
+            age: 59,
+            hobby: 'singing'
+        }
+        const result = Object.assign(obj1,obj2);
+        // 当重名的时候 第二个参数去覆盖第一个参数
+        console.log(result);
+
+        // Object.prototype设置和获取原型对象
+        const zero1 = {
+            core: 'heart'
+        }
+        const zero2 = {
+            fame: ['superman','highest']
+        }
+        Object.setPrototypeOf(zero1,zero2);
+        console.log(zero1);
+        console.log(Object.getPrototypeOf(zero1));
+    </script>
+</body>
+</html>

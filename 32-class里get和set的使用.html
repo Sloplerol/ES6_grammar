@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Ozs{
+            get eat(){
+                //在你读取到eat方法的时候就会触发
+                console.log('nihaoa');
+                return 'league of our';
+            }
+            set eat(parms){
+                //set对方法返回的结果进行了修改
+                console.log('结果被setter修改了'+parms);
+            }
+        }
+        let ol = new Ozs();
+        console.log(ol.eat); //返回值值就是eat方法所返回的值
+        ol.eat = 'file'; //
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //reset参数对于对象的支持
+        function com({username,password,...extra}) {
+            console.log(username);
+            console.log(password);
+            console.log(extra);
+        }
+        com({
+            username:'zjj',
+            password: '12345',
+            phone: '93131',
+            email: '234nsa@gamil.com'
+        });
+
+
+        const ex1 = {
+            f: 'lihai'
+        }
+        const ex2 = {
+            q: 'lihai'
+        }
+        const ex3 = {
+            k: 'haishilihai'
+        }
+        // 利用扩展运算符对于对象的合并
+        const result = {...ex1,...ex2,...ex3};
+        console.log(result);
+
+    </script>
+</body>
+</html>

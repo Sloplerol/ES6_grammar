@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let fn = function(){
+        //     console.log(hello);
+        // }
+        // 箭头函数形式进行声明函数
+        let fn = (a,b)=>{
+            return a+b;
+        }
+        // 调用箭头函数
+        let result = fn(1,2);
+        console.log(result);
+        // this是静态的 箭头函数this始终指向函数声明所在作用域下this的值
+        function ok(){
+            console.log(this);
+        }
+        let ok1 = ()=>{
+            console.log(this);
+        }
+        const school = {
+            rname: 'zjj'
+        }
+        ok();
+        ok1();
+        // call可以去调用函数 也可以改变this的指向
+        ok.call(school); //普通函数this指向改为了school这个对象
+        ok1.call(school);   //箭头函数this指向还是window
+
+        //不能用作为构造器实例化对象
+        // let Person = (rname,age)=>{
+        //     this.rname = rname;
+        //     this.age = age;
+        // }
+        // let person = new Person('zjj',29);
+        // console.log(person);
+
+        // 箭头函数不能使用arguments
+        // let fb = ()=>{
+        //     console.log(arguments);
+        // }
+        // fb(1,2,3);
+
+        //箭头函数的简写
+        // 1.省略小括号 当函数参数只有一个的时候
+        // let fn1 = a=>{
+        //     console.log(a);
+        // }
+        // fn1(2);
+        // 2.省略花括号 当代码体只有一条语句的时候 函数的return需要省略 
+        let fn2 = n => n * n;
+        console.log(fn2(2));
+    </script>
+</body>
+</html>

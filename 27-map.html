@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let map = new Map();
+        // 添加键和值
+        map.set('rname','zjj');
+        map.set('change',function(){
+            console.log('abcd');
+        })
+        console.log(map);
+        let obj = {
+            sell: 10
+        }
+        //键是对象 值是数组
+        map.set(obj,['a','b','c']);
+        //size测量map长度
+        console.log(map.size);
+        // delete删除元素
+        // map.delete('rname')
+        //获取元素
+        console.log(map.get('rname'));
+        // 清空map值
+        // map.clear();
+        // 遍历map值 以数组的形式存储键和值
+        for(v of map) {
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

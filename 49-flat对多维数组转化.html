@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // flat将多维数组转化为低位数组
+        const arr = [1,2,3,[1,2,3]];
+        console.log(arr.flat());
+        const arr1 = [2,3,4,[2,[2,3,4]]];
+        console.log(arr1.flat()); //将数组变为二维数组
+        console.log(arr1.flat(2)); //将数组变为一维数组
+        // flat里的参数代表深度
+
+        //flatMap
+        const arr2 = [1,2,3,4,5];
+        const result = arr2.map(item=>item*10);
+        // 如果result返回结果为item返回结果为数组 使用flatMap将里面数组进行维度转化
+        const result1 = arr2.flatMap(item=>[item*10]);
+        console.log(result);
+        console.log(result1);
+    </script>
+</body>
+</html>

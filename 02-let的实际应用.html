@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .box {
+            width: 200px;
+            height: 80px;
+            border: 1px solid black;
+            margin-left: -1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelectorAll('.box');
+        for(let i = 0;i<box.length;i++) {
+            //当var i改为let i就可以实现以下代码
+            box[i].onclick = function(){
+                box[i].style.backgroundColor = 'pink';
+            }
+        }
+
+        // 当var时相当于如下代码
+        //当点击的时候此时i全局变量为3box没有下标索引为3的所以报错
+        {
+            var i = 1;
+        }
+        {
+            var i = 2;
+        }
+        {
+            var i = 3;
+        }
+        //当let时相当于以下代码
+        // 每一个i都各自独立毫无影响
+        {
+            let i = 1;
+        }
+        {
+            let i = 2;
+        }
+        {
+            let i = 3;
+        }
+    </script>
+</body>
+</html>

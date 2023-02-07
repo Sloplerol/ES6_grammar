@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Phone(){
+            
+        }
+        Phone.name = 'Huawei';
+        Phone.usage = 'Call phone';
+        // 以上两种是属于函数对象的 被称为静态成员
+        //他属于类不属于实例对象
+        let huawei = new Phone();
+        Phone.prototype.size = 02;
+        console.log(huawei.name);
+        // huawei.usage();
+        console.log(huawei.size);
+        class Person{
+            static name = 'zjj';
+            static change(){
+                console.log('call the phone');
+            }
+        }
+        console.log(Person.name); //静态成员是可以通过类来访问到的
+    </script>
+</body>
+</html>

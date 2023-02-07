@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        const team = ['a','b','c','d'];
+        function fn(){
+            console.log(arguments);
+        }
+        // 和reset参数的不同点 reset参数主要集中于函数的形参中 而扩展运算符应用层面比较广
+
+        fn(team); //此时只有一个参数
+        fn(...team); //此时有四个参数
+        
+        //数组的合并
+        const tai = ['ma','bao'];
+        const ji = ['guo'];
+        // const wulin = tai.concat(ji);
+        // console.log(wulin);
+        // 利用扩展运算符进行数组合并
+        const wulin = [...tai,...ji];
+        console.log(wulin);
+
+        //数组克隆
+        const arr = ['this','is','a','miracle'];
+        const arrclone = [...arr];
+        console.log(arrclone);
+
+        //将伪数组转化为真正的数组
+        const div = document.querySelectorAll('div');
+        const divarr = [...div];
+        console.log(divarr);
+    </script>
+</body>
+</html>

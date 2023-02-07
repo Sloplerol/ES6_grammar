@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p = new Promise(function(resolve,reject){
+            setTimeout(()=>{
+                resolve('成功');
+                // reject('失败');
+            },1000)
+        });
+        // then方法返回结果为promise对象 promise的状态为失败
+        const result = p.then(value=>{
+            console.log(value);
+            // 当函数内部没有return默认结果为undefined不是promise对象返回结果为成功
+            // return 'sad';
+            // 如果返回结果为promise对象那么里面返回结果的promise状态决定外部then的状态
+            // return new Promise((resolve,reject)=>{
+            //     reject('成功了');
+            //     // 既修改了状态也修改了值
+            // })
+            //throw抛出promise的状态为rejected
+            throw 'nihaoa';
+        },reason=>{
+            console.log(reason);
+        })
+        console.log(result); //then方法返回结果是一个promise对象  
+
+
+        // 链式then 可以有效避免回调地狱
+        p.then(value=>{
+            console.log(value);
+        }).then(reason=>{
+            console.log(reason);
+        })
+    </script>
+</body>
+</html>

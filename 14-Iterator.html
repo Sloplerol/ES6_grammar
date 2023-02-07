@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const arr = ['a','b','c','d'];
+        // for (let k of arr) {
+        //     // console.log(k);
+        // }
+        // let iterator = arr[Symbol.iterator](); //调用函数返回的结果是一个对象
+        // console.log(iterator.next()); //调用对象的next方法 返回结果是value done
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        
+        // 给对象提供iterator接口
+        const obj = {
+            rname: 'sad',
+            stu: ['a','b','c','d'],
+            //通过修改对象的Symboliterator属性从而提供iterator接口
+            [Symbol.iterator](){
+                // 设置下表索引来设置返回对象的限制条件
+                let index = 0;
+                // 为了改变内部的this指向
+                let _this = this;
+                //创建指针对象 里面包含next方法
+                return {
+                    next: function(){
+                        if (index<_this.stu.length) {
+                            const result = {value:_this.stu[index],done: false};
+                            index++;
+                            return result;
+                        }else {
+                            return {value: undefined,done: true};
+                        }
+                    }
+                };
+            }
+        }
+        //for of每次返回的都是数组里的成员
+        for (let v of obj) {
+            console.log(v);
+        }
+        //forEach遍历数组也行 但是他符合面向对象的思想 
+    </script>
+</body>
+</html>

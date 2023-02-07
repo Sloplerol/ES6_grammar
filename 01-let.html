@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明变量
+        let a;
+        let b = 1,c = 2;
+        
+        let x = 1;
+        // let x = 2;
+        // 变量不能重复声明
+
+        // 块级作用域 
+        {
+            let boy = 'asd'
+        }
+        // console.log(boy); //报错
+
+        // 不存在变量提升 ES6规定必须先声明后赋值
+        // console.log(girl);
+        let girl = 'asdas';//报错
+
+        // 不影响作用域链
+        {
+            let x = 10;
+            function fn(){
+                console.log(x);
+                // 在函数内部还是能访问到x
+            }
+            fn();
+        }
+    </script>
+</body>
+</html>

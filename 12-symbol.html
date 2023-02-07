@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const h1 = Symbol();
+        console.log(h1,typeof(h1));
+        // 打印的类别为symbol这个独立的种类
+        const h2 = Symbol('hello');
+        const h3 = Symbol('hello');
+        // symbol里面内嵌的语句相当于是对该元素的注释 
+        console.log(h2===h3);
+
+        //Symbol.for通过描述的字符串创建的是唯一symbol值
+        const p1 = Symbol.for('world');
+        const p2 = Symbol.for('world');
+        console.log(p1===p2);
+
+        //不能与其他数据进行运算
+
+        // js数据类型 USONB
+        // U undefined
+        // S Symbol String
+        // O Object
+        // N null Number
+        // B Boolean
+
+        //Symbol向对象里写入属性和方法
+        let obj = {};
+        let game = {
+            up: Symbol(),
+            down: Symbol()   
+        }
+        obj[game.up] = function(){
+            console.log('zjj');
+        }
+        obj[game.down] = function(){
+            console.log('asdasd');
+        }
+        console.log(obj);
+
+        //直接往对象里面写入属性和方法
+        let obj1 = {
+            age: 29,
+            [Symbol()]: function(){
+                console.log('zjj');
+            }
+        }
+        console.log(obj1);
+    </script>
+</body>
+</html>

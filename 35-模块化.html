@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // 从这个js文件引入模块内容作为m1的返回结果
+        // 通用的导入模块形式
+        // import * as m1 from './35-模块化exports接口.js';
+        // console.log(m1);
+        // console.log(m1.default.sex);
+        // 利用结构赋值来实现导入模块
+        // import {rname,Judgesex} from './35-模块化exports接口.js';
+        // import {rname as a,Judgesex as b} from './35-模块化exports接口.js'; //如果发生重名了可以用as解决报错问题
+        // import {default as m} from './35-模块化exports接口.js';  //default导入直接给default加一个别名就行
+        // import m from './35-模块化exports接口.js'; //简便模式针对于默认导出情况下的
+        // console.log(rname);
+        // console.log(Judgesex);
+        // console.log(a);
+        // console.log(b);
+        // console.log(m);
+        
+    </script>
+    <script src="./dist/bundle.js" type="module"></script>
+</body>
+</html>

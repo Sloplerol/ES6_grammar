@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Phone(name,brand) {
+            this.name = name;
+            this.brand = brand;
+        }
+        Phone.prototype.sayName = function(){
+            console.log('sing jump');
+        }
+        function Newphone(name,brand,color,size) {
+            Phone.call(this,name,brand);
+            this.color = color;
+            this.size = size;
+            
+        }
+        Newphone.prototype = new Phone;//实例对象上有父级的方法
+        Newphone.prototype.eat = function(){
+            console.log('eating');
+        }
+        Newphone.prototype.drink = function(){
+            console.log('drinking');
+        }
+        const iph = new Newphone('Sanxing','Sanxing','red',10000);
+        console.log(iph);
+    </script>
+</body>
+</html>

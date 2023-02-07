@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function User(){
+            setTimeout(function(){
+                let data = '111'
+                it.next(data);
+            },1000)
+        }
+        function Order(){
+            setTimeout(function(){
+                let data = '222'
+                it.next(data);
+
+            },1000)
+        }
+        function Team(){
+            setTimeout(function(){
+                let data = '333'
+                it.next(data);
+
+            },1000)
+        }
+        function* fn() {
+            let one = yield User();
+            console.log(one);
+            let two = yield Order();
+            console.log(two);
+            let three = yield Team();
+            console.log(three);
+        }
+        let it = fn();
+        it.next();        
+
+    </script>
+</body>
+</html>

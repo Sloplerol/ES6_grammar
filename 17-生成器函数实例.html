@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 回调地狱目的就是为了去按照正确顺序防止被异步顺序干扰 不断回调 维护性差 而且还是同步
+        // setTimeout(function(){
+        //     console.log('hello');
+        //     setTimeout(function(){
+        //         console.log('wor');
+        //         setTimeout(function(){
+        //             console.log('ld');
+        //         },3000)
+        //     },2000)
+        // },1000)
+        // const one = setTimeout(function(){
+        //     console.log('hello');
+        //     it.next();
+        // },1000);
+        // const two = setTimeout(function(){
+        //     console.log('wor');
+        //     it.next();
+        // },2000);
+        // const three = setTimeout(function(){
+        //     console.log('ld');
+        //     it.next();
+        // },3000)
+        // function* fn(){
+        //     yield one;
+        //     yield two;
+        //     yield three;
+        // }
+        // let it = fn();
+        // 利用生成器去实现异步编程
+        function one(){
+            setTimeout(()=>{
+                console.log('hello');
+                it.next();
+
+            },1000)
+        }
+        function two(){
+            setTimeout(()=>{
+                console.log('wor');
+                // 想要调用第二个里面的next方法必须要先调用上一个yield函数的next方法
+                it.next();
+
+            },2000)
+        }
+        function three(){
+            setTimeout(()=>{
+                console.log('ld');
+                it.next();
+
+            },3000)
+        }
+        function* fn(){
+            yield one();
+            yield two();
+            yield three();
+        }
+        let it = fn();
+        
+        it.next();
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* fn(){
+            console.log('111');
+            yield 'woshi1';
+            console.log('222');
+            yield 'woshi2';
+            console.log('333');
+            yield 'woshi3';
+            console.log('444');
+            
+        }
+        let it = fn();
+        // it.next();
+        // console.log(it.next());返回结果为{value:woshi1,done:false};
+        // it.next();
+        // it.next();
+        // it.next();
+
+        for (let i of it) {
+            console.log(i);
+        }
+        // 利用for of遍历的是生成器yield返回的结果
+    </script>
+</body>
+</html>

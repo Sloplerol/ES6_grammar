@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(0.1+0.2==0.3);
+        function fn(a,b){
+            //eosilon最小精度值 当两个数的差值小于最小精度值则认为这两个数相等
+            if(Math.abs(a-b)<Number.EPSILON) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+        console.log(fn(0.1+0.2,0.3));
+
+        // 进制转化
+        let b = 0b1010;
+        let a = 0o333;
+        let d = 291;
+        let x = 0xff;
+        console.log(b,a,d,x);
+
+        //检测数字是否有限
+        console.log(Number.isFinite(100));
+        console.log(Number.isFinite(Infinity));
+
+        //检测是否为数字
+        console.log(Number.isNaN(100));
+        console.log(Number.isNaN(100-'woshi'));
+
+        //字符串转数字
+        console.log(Number.parseInt('1243'));
+        console.log(Number.parseFloat('123dva')); //只转化了有数字的字符不是数字的直接扔掉
+
+        //判断是否为整数
+        console.log(Number.isInteger(1223));
+
+        //抹掉小数部分
+        console.log(Math.trunc(2.3));
+
+        //判断正负和0
+        console.log(Math.sign(199));   //1
+        console.log(Math.sign(0));    //0
+        console.log(Math.sign(-100));  //-1
+
+    </script>
+</body>
+</html>
