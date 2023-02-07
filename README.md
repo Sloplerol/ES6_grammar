@@ -14,13 +14,6 @@
   * Async
 
 ### Let,const
-  1. Let
-    > Let declared variables are valid only within the code block in which they are located
-    '''javascript
-    if (true) {
-      let a = 10
-    }
-    console.log(a) // a is not defined
-    '''
+  > hwll
 
 
