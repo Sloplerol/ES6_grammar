@@ -1,5 +1,3 @@
-# ES6_grammar
-
 
 ## Catalogue
   * let,const
