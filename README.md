@@ -1,4 +1,4 @@
-![es6]('https://github.com/Sloplerol/ES6_grammar/blob/master/images/Charm.jpg')
+![es6](https://github.com/Sloplerol/ES6_grammar/blob/master/images/Charm.jpg)
 ## Catalogue
   * let,const
   * Deconstructed assignment 
